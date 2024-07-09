@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>car-registration-tracker</artifactId>
+	<artifactId>gdp-car-rego-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>car-registration-tracker</name>
+	<name>gdp-car-rego-backend</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
