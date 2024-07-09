@@ -39,3 +39,8 @@ env:
 DOCKER_IMAGE_NAME: "gdp-docker-img-backend"
 SONAR_ORGANIZATION: "r3aper89"
 SONAR_PROJECT_KEY: "gdp-car-rego-backend"
+
+## commit message standards
+
+-   no caps
+-   only 100 characters
