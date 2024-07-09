@@ -5,7 +5,7 @@ on: [push, pull_request]
 env:
   DOCKER_IMAGE_NAME: "gdp-docker-img-backend"
   SONAR_ORGANIZATION: "r3aper89"
-  SONAR_PROJECT_KEY: "gdp-car-rego-backend"
+  SONAR_PROJECT_KEY: "car-registration-tracker"
 
 jobs:
   build:
