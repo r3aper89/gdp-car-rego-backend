@@ -5,7 +5,7 @@ on: [push, pull_request]
 env:
     DOCKER_IMAGE_NAME: "gdp-docker-img-backend"
     SONAR_ORGANIZATION: "r3aper89"
-    SONAR_PROJECT_KEY: "gdp-car-rego-backend"
+    # SONAR_PROJECT_KEY: "gdp-car-rego-backend"
 
 jobs:
     build:
@@ -29,8 +29,10 @@ jobs:
                   sonar_token: ${{ secrets.SONAR_TOKEN }}
                   sonar_args: >
                       -Dsonar.organization=${{ env.SONAR_ORGANIZATION }}
-                      -Dsonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
                       -Dsonar.host.url=https://sonarcloud.io
                   docker_image_name: ${{ env.DOCKER_IMAGE_NAME }}
                   dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
                   dockerhub_token: ${{ secrets.DOCKERHUB_TOKEN }}
+
+                  # sonar_args: >
+                  #   -Dsonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
