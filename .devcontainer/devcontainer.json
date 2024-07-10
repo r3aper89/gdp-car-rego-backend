@@ -16,11 +16,12 @@
 				"vmware.vscode-boot-dev-pack",
 				"streetsidesoftware.code-spell-checker",
 				"redhat.java",
-                "vscjava.vscode-java-debug",
-                "vscjava.vscode-java-test",
-                "vscjava.vscode-maven",
-                "vscjava.vscode-java-dependency",
-                "visualstudioexptteam.vscodeintellicode"
+				"vscjava.vscode-java-debug",
+				"vscjava.vscode-java-test",
+				"vscjava.vscode-maven",
+				"vscjava.vscode-java-dependency",
+				"visualstudioexptteam.vscodeintellicode",
+				"bierner.markdown-mermaid"
 			],
 			"settings": {
                 "java.format.enabled": true,

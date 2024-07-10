@@ -1,7 +1,7 @@
 # Rest API Design
 
 ```mermaid
-graph TD
+graph
     subgraph REST API Structure
         A[Client] <-->|HTTP| B[Controller]
         B <--> |DTO| C[Service Layer]
