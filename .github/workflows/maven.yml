@@ -5,7 +5,8 @@ on: [push, pull_request]
 env:
     DOCKER_IMAGE_NAME: "gdp-docker-img-backend"
     SONAR_ORGANIZATION: "r3aper89"
-    # SONAR_PROJECT_KEY: "gdp-car-rego-backend"
+    #ref: /workspaces/gdp-car-rego-backend/src/main/java/com/example/car_registration_tracker
+    SONAR_PROJECT_KEY: "car-registration-tracker"
 
 jobs:
     build:
@@ -28,6 +29,7 @@ jobs:
                   java_version: 17
                   sonar_token: ${{ secrets.SONAR_TOKEN }}
                   sonar_args: >
+                      -Dsonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
                       -Dsonar.organization=${{ env.SONAR_ORGANIZATION }}
                       -Dsonar.host.url=https://sonarcloud.io
                   docker_image_name: ${{ env.DOCKER_IMAGE_NAME }}
