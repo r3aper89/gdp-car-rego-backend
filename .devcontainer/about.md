@@ -42,3 +42,10 @@ Overall, this Dockerfile sets up a Java development environment with optional Ma
 ### ref:
 
 https://github.com/microsoft/vscode-dev-containers/tree/main/containers/java
+
+
+## extensions 
+
+Gitlens enable interactive editor is activated in the devcontiainer settings this allows gui rebase and squash. 
+
+in terminal

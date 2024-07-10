@@ -21,12 +21,14 @@
 				"vscjava.vscode-maven",
 				"vscjava.vscode-java-dependency",
 				"visualstudioexptteam.vscodeintellicode",
-				"bierner.markdown-mermaid"
+				"bierner.markdown-mermaid",
+				"eamodio.gitlens"
 			],
 			"settings": {
                 "java.format.enabled": true,
                 "editor.formatOnSave": true,
-                "java.configuration.updateBuildConfiguration": "automatic"
+                "java.configuration.updateBuildConfiguration": "automatic",
+				"gitlens.enableRebaseEditor": true
             }
 		}
 	},
