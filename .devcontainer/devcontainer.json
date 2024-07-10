@@ -9,12 +9,26 @@
 		// Configure properties specific to VS Code.
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
-			"settings": {},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"vscjava.vscode-java-pack",
-				"vmware.vscode-boot-dev-pack"
-			]
+				"vmware.vscode-boot-dev-pack",
+				"streetsidesoftware.code-spell-checker",
+				"redhat.java",
+				"vscjava.vscode-java-debug",
+				"vscjava.vscode-java-test",
+				"vscjava.vscode-maven",
+				"vscjava.vscode-java-dependency",
+				"visualstudioexptteam.vscodeintellicode",
+				"bierner.markdown-mermaid",
+				"eamodio.gitlens"
+			],
+			"settings": {
+				"java.format.enabled": true,
+				"editor.formatOnSave": true,
+				"java.configuration.updateBuildConfiguration": "automatic",
+				"gitlens.enableRebaseEditor": true
+			}
 		}
 	},
 
@@ -22,9 +36,9 @@
 	// default springboot port 8080
 	"forwardPorts": [8080],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "java -version",
-
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode"
+	"remoteUser": "vscode",
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "java -version && mvn --version"
 }
