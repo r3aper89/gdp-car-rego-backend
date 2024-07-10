@@ -9,7 +9,6 @@
 		// Configure properties specific to VS Code.
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
-			"settings": {},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"vscjava.vscode-java-pack",
@@ -25,11 +24,11 @@
 				"eamodio.gitlens"
 			],
 			"settings": {
-                "java.format.enabled": true,
-                "editor.formatOnSave": true,
-                "java.configuration.updateBuildConfiguration": "automatic",
+				"java.format.enabled": true,
+				"editor.formatOnSave": true,
+				"java.configuration.updateBuildConfiguration": "automatic",
 				"gitlens.enableRebaseEditor": true
-            }
+			}
 		}
 	},
 
