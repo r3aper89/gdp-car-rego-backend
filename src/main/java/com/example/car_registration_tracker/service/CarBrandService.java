@@ -17,4 +17,10 @@ public class CarBrandService {
         return carBrandRepository.findAll();
     }
 
+    public CarBrand getCarBrandById(Long id) {
+        return carBrandRepository.findById(id).orElse(null);
+    }
+
 }
+
+// https://www.baeldung.com/spring-data-jpa-getreferencebyid-findbyid-methods

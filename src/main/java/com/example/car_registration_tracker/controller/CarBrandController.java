@@ -12,7 +12,6 @@ import java.util.List;
 @RequestMapping("/api/car-brands")
 public class CarBrandController {
     
-
     @Autowired
     private CarBrandService carBrandService;
 
@@ -21,7 +20,9 @@ public class CarBrandController {
         return carBrandService.getAllCarBrands();
     }
     
-
-    // getCarBrandById()
+    @GetMapping("/{id}")
+    public CarBrand getCarBrandById(@PathVariable Long id) {
+        return carBrandService.getCarBrandById(id);
+    }
 
 }
