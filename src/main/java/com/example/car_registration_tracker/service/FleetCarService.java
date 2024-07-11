@@ -32,4 +32,16 @@ public class FleetCarService {
     public FleetCar saveFleetCar(FleetCar fleetCar) {
         return fleetCarRepository.save(fleetCar);
     }
+
+    // return the updated fleet car, or null if not found.
+    public FleetCar updateFleetCarActiveStatus(Long id, boolean activeStatus) {
+        FleetCar fleetCar = fleetCarRepository.findById(id).orElse(null);
+        if (fleetCar != null) {
+            fleetCar.setFleetActive(activeStatus);
+            return fleetCarRepository.save(fleetCar);
+        }
+        return null;
+    }
+
+
 }

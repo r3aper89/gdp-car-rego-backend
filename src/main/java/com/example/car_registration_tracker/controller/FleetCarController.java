@@ -46,7 +46,16 @@ public class FleetCarController {
         return fleetCarService.saveFleetCar(fleetCar);
     }
 
-    
+    // update update Fleet Car Active Status
+    @PutMapping("status/{id}")
+    public ResponseEntity&lt;FleetCar&gt; updateFleetCarActiveStatus(@PathVariable Long id, @RequestParam boolean activeStatus) {
+        FleetCar updatedFleetCar = fleetCarService.updateFleetCarActiveStatus(id, activeStatus);
+        if (updatedFleetCar != null) {
+            return ResponseEntity.ok(updatedFleetCar);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 }
 
