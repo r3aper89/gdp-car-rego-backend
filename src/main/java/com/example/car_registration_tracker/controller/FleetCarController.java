@@ -40,10 +40,48 @@ public class FleetCarController {
         return ResponseEntity.ok(fleetCar);
     }
 
+    // create fleet car
+    @PostMapping
+    public FleetCar createFleetCar(@RequestBody FleetCar fleetCar) {
+        return fleetCarService.saveFleetCar(fleetCar);
+    }
 
+    
 
 }
 
+//     /api/fleet-cars
+// {
+//   "fleetCarId": 0,
+//   "numberPlate": "b055",
+//   "expiryDate": "2030-07-11",
+//   "carModel": {
+//     "modelId": 2,
+//     "modelName": "dd",
+//     "carBrand": {
+//       "brandId": 1,
+//       "brandName": "ss"
+//     }
+//   },
+//   "driverName": "driver",
+//   "fleetActive": true
+// }
+
+// {
+//   "fleetCarId": 16,
+//   "numberPlate": "asshole",
+//   "expiryDate": "2030-07-11",
+//   "carModel": {
+//     "modelId": 2,
+//     "modelName": "Yaris",
+//     "carBrand": {
+//       "brandId": 1,
+//       "brandName": "Toyota"
+//     }
+//   },
+//   "driverName": "driver",
+//   "fleetActive": true
+// }
 
 // /api/fleet-cars/
 

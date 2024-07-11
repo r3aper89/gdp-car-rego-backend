@@ -28,5 +28,8 @@ public class FleetCarService {
         return fleetCarRepository.findById(id).orElse(null);
     }
 
-
+    // return the saved fleet car.
+    public FleetCar saveFleetCar(FleetCar fleetCar) {
+        return fleetCarRepository.save(fleetCar);
+    }
 }
