@@ -15,14 +15,17 @@ public class CarModelService {
     @Autowired
     private CarModelRepository carModelRepository;
 
+    // return list of car models associated with the specified car brand.
     public List<CarModel> getCarModelsByBrandId(Long brandId) {
         return carModelRepository.findByCarBrandBrandId(brandId);
     }
 
+    // return the car model with the specified ID, or null if not found.
     public CarModel getCarModelById(Long id) {
         return carModelRepository.findById(id).orElse(null);
     }
 
+    // return the car brand associated with the specified car model, or null if not found.
     public CarBrand getCarBrandByModelId(Long modelId) {
         CarModel carModel = carModelRepository.findById(modelId).orElse(null);
         return carModel != null ? carModel.getCarBrand() : null;

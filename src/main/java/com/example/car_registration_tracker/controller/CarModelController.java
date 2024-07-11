@@ -20,8 +20,8 @@ public class CarModelController {
     // car_models(model_id= 4,5) > brand_id = 2, > brandName": "Ford"
     // car_models(model_id= 6,7) > brand_id = 3, > brandName": "Hyundai"
 
+    // return a list of car models associated with the specified car brand.
     @GetMapping("/brand/{brandId}")
-    // Get all car models based on the car brand's brand_id.
     public List<CarModel> getCarModelsByBrandId(@PathVariable Long brandId) {
         return carModelService.getCarModelsByBrandId(brandId);
     }
@@ -45,8 +45,8 @@ public class CarModelController {
     //   }
     // ]
 
+    // return the car model with the specified ID.
     @GetMapping("/{modelId}")
-    //  Get car brand and car model based on model_id.
     public CarModel getCarModelById(@PathVariable Long modelId) {
         return carModelService.getCarModelById(modelId);
     }
@@ -60,8 +60,9 @@ public class CarModelController {
     //   }
     // }
 
+    // 
+    // return the car brand associated with the specified car model.
     @GetMapping("/{modelId}/brand")
-    // Get the car brand from the car model's model_id.
     public CarBrand getCarBrandByModelId(@PathVariable Long modelId) {
         return carModelService.getCarBrandByModelId(modelId);
     }

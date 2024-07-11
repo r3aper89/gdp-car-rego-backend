@@ -15,11 +15,13 @@ public class CarBrandController {
     @Autowired
     private CarBrandService carBrandService;
 
+    // return a list of all car brands.
     @GetMapping
     public List<CarBrand> getAllCarBrands() {
         return carBrandService.getAllCarBrands();
     }
     
+    // return the car brand with the specified ID.
     @GetMapping("/{id}")
     public CarBrand getCarBrandById(@PathVariable Long id) {
         return carBrandService.getCarBrandById(id);
