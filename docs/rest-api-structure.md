@@ -5,38 +5,42 @@ graph
     subgraph REST API Structure
         A[Client] <-->|HTTP| B[Controller]
         B <--> |DTO| C[Service Layer]
-        C <--> |DTO| D[Adapter]
-        C <--> |DTO| E[Repository]
-        E <--> |Entity| F[Database]
+        C <--> D[Adapter]
+        C <--> |Entity| E[Repository]
+        E <--> D[Adapter]
+        E <--> |DAO| F[Database]
     end
 ```
 
-## Adapter
-- Intermediaries between app components or external systems
-- Converts data formats and integrates third-party services
+1. Client to Controller: 
+   - The client sends an HTTP request to the controller.
 
-## Controller
-- Handles HTTP requests and responses
-- Defines API endpoints and processes incoming data
+2. Controller to Service Layer:
+   - The controller processes the request, converts it into a DTO, and forwards it to the service layer.
 
-## DTO (Data Transfer Object)
-- Encapsulates data for transfer between subsystems
-- Separates internal data model from external API representation
+3. Service Layer to Repository:
+   - The service layer receives the DTO and applies business logic, then forwards the request to the repository.
 
-## Entity
-- Represents core domain objects
-- Often maps to database tables
-- Contains business logic and data
+4. Service Layer to Adapter:
+   - If needed, the service layer uses the adapter for data conversion or external integrations.
 
-## Repository
-- Abstraction layer for data access
-- Handles database operations (CRUD)
-- Provides object-oriented view of persistence
+5. Repository to DAO:
+   - The repository uses DAOs to perform data access operations.
 
-## Service
-- Contains core business logic
-- Implements complex rules and workflows
-- Bridges controllers and repositories
+6. DAO to Entity:
+   - DAOs use entities to interact with the database.
+
+7. Entity to Database:
+   - Entities represent the data structure and perform CRUD operations on the database.
+
+8. Data Return Path:
+   - Data flows back from the database through entities, DAOs, repositories, service layer, and controller, eventually reaching the client as an HTTP response.
+
+
 
 # resources
 [REST API Design Best Practices Handbook](https://www.freecodecamp.org/news/rest-api-design-best-practices-build-a-rest-api/)
+
+
+
+
