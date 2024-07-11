@@ -1,15 +1,15 @@
 {
-	"name": "Java",
+	"name": "Java-Maven",
 	"build": {
-		"dockerfile": "../Dockerfile" // Path to Dockerfile
+		"dockerfile": "../Dockerfile"
 	},
-
-	// Configure tool-specific properties.
+	"runArgs": [
+		"--network=network-gdp-car-rego",
+		"--name",
+		"api-java-maven-springboot" // Ensure the container joins the custom network
+	],
 	"customizations": {
-		// Configure properties specific to VS Code.
 		"vscode": {
-			// Set *default* container specific settings.json values on container create.
-			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"vscjava.vscode-java-pack",
 				"vmware.vscode-boot-dev-pack",
@@ -21,24 +21,33 @@
 				"vscjava.vscode-java-dependency",
 				"visualstudioexptteam.vscodeintellicode",
 				"bierner.markdown-mermaid",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"mtxr.sqltools", // SQL tools extension for VSCode
+				"mtxr.sqltools-driver-pg" // PostgreSQL driver for SQL tools
 			],
 			"settings": {
 				"java.format.enabled": true,
 				"editor.formatOnSave": true,
 				"java.configuration.updateBuildConfiguration": "automatic",
-				"gitlens.enableRebaseEditor": true
+				"gitlens.enableRebaseEditor": true,
+				"sqltools.connections": [
+					{
+						"name": "PostgreSQL Container", // Name of the connection
+						"driver": "PostgreSQL", // Database driver
+						"server": "postgres-db", // Server address
+						"port": 5432, // Port number
+						"database": "mydb", // Database name
+						"username": "admin", // Username
+						"password": "admin" // Password
+					}
+				]
 			}
 		}
 	},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// default springboot port 8080
 	"forwardPorts": [8080],
 
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 
-	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "java -version && mvn --version"
 }
