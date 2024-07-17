@@ -6,7 +6,9 @@
 	"runArgs": [
 		"--network=network-gdp-car-rego",
 		"--name",
-		"api-java-maven-springboot" // Ensure the container joins the custom network
+		"backend-container",
+		"-p",
+		"8080:8080"
 	],
 	"customizations": {
 		"vscode": {
